@@ -49,14 +49,35 @@ body {
   position: relative;
   top: 50px;
   text-align: center;
+  animation: rocket 0.1s ease infinite;
+}
+@keyframes rocket {
+  0%,
+  100% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
 }
 .rocket::before {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: -250px;
   left: 50%;
   transform: translateX(-50%);
   width: 20px;
   height: 250px;
   background: linear-gradient(#ffc107, transparent);
+}
+.rocket::after {
+  content: '';
+  position: absolute;
+  bottom: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 250px;
+  background: linear-gradient(#ffc107, transparent);
+  filter: blur(20px);
 }
